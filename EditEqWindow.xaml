@@ -1,0 +1,35 @@
+﻿<Window x:Class="OfficeEqApp.Views.EditEquipmentWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:local="clr-namespace:OfficeEqApp.Models"
+        Title="Редактировать оборудование" Height="250" Width="400" WindowStartupLocation="CenterOwner">
+    <Grid Margin="10">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+
+        <StackPanel Margin="0 0 0 10">
+            <TextBlock Text="Наименование"/>
+            <TextBox Text="{Binding Equipment.Name}" Width="300"/>
+        </StackPanel>
+
+        <StackPanel Grid.Row="1" Margin="0 0 0 10">
+            <TextBlock Text="Тип"/>
+            <ComboBox ItemsSource="{Binding EquipmentTypes}" SelectedItem="{Binding Equipment.Type}" Width="300"/>
+        </StackPanel>
+
+        <StackPanel Grid.Row="2" Margin="0 0 0 10">
+            <TextBlock Text="Статус"/>
+            <ComboBox ItemsSource="{Binding EquipmentStatuses}" SelectedItem="{Binding Equipment.Status}" Width="300"/>
+        </StackPanel>
+
+        <StackPanel Grid.Row="3" Orientation="Horizontal" HorizontalAlignment="Right">
+            <Button Content="OK" Width="80" Margin="5" Click="Ok_Click"/>
+            <Button Content="Отмена" Width="80" Margin="5" Click="Cancel_Click"/>
+        </StackPanel>
+    </Grid>
+</Window>
+
